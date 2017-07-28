@@ -25,6 +25,10 @@ let shops=[
 					"name": "dress",
 					"qty": 7,
 					"price": 1200
+				},{
+					"name": "qqq",
+					"qty": 7,
+					"price": 1200
 				}
 			]
 		}

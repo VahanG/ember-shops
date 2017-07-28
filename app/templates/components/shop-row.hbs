@@ -5,7 +5,7 @@
       {{input type="text"  value=editing}}
       <button {{action "cancelEdit"}}>Cancel</button>
   {{else}}
-    <span>{{row.name}}</span>
+    <span> {{link-to row.name "shops.shop" row}}</span>
   {{/if}}
   <button {{action "btnClick"}}>{{editBtnText}}</button>{{row.isDeleted}}
 

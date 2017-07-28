@@ -1,10 +1,9 @@
-{{outlet}}
-Products
+<h2>Products</h2>
   <ul class="results">
-    {{#each model as |product|}}454
+    {{#each model.products as |product index|}}
         {{#unless product.isDeleted}}
-            {{product-row row=product}} <button {{action 'remove' product}}>Remove</button>
+            {{product-row row=product}} <button {{action 'remove' index}}>Remove</button>
         {{/unless}}
     {{/each}}
   </ul>
-  <button {{action "add"}}>add</button>
+  <button {{action "add"}}>add</button>{{aa.p}} <div style="display:none">{{aa}}</div>

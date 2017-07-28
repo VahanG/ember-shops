@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     actions:{
       add(){
-          console.log(this);
           this.get('store').createRecord('shop',{title:"dfs"})
       },
       remove(v){

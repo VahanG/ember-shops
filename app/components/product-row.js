@@ -7,8 +7,8 @@ export default Ember.Component.extend({
     init() {
       this._super(...arguments);
       this.editable = false;
-      console.log(this.row.name);
-      this.editing = this.row.toJSON();
+      console.log(this.row);
+      this.editing = Object.assign({},this.row);
       this.editBtnText ="EDIT";
       //this.errors = [];
     },
@@ -25,24 +25,26 @@ export default Ember.Component.extend({
       this.set('editBtnText','Edit');
 
       this.set('editable', false);
-      this.set('row.name',this.editing)
+      this.set('row.price',this.editing.price);
+      this.set('row.name',this.editing.name);
+      this.set('row.qty',this.editing.qty);
+
     },
     actions:{
         cancelEdit(){
-          this.set('editing',this.get('row.name')) ;
+          //this.editing = Object.assign({},this.row);
+          this.set('editing',Object.assign({},this.get('row'))) ;
           this.set('editable', false);
           this.set('editBtnText','Edit');
         },
         btnClick(value){
+          this.trigger('productEdit');
+
           if(this.editable){
               this.saveChanges(this.row);
           }else{
               this.makeEditable();
           }
-
-
         }
-
-
     },
 });
