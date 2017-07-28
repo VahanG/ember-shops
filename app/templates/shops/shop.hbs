@@ -1,0 +1,10 @@
+{{outlet}}
+Products
+  <ul class="results">
+    {{#each model as |product|}}454
+        {{#unless product.isDeleted}}
+            {{product-row row=product}} <button {{action 'remove' product}}>Remove</button>
+        {{/unless}}
+    {{/each}}
+  </ul>
+  <button {{action "add"}}>add</button>

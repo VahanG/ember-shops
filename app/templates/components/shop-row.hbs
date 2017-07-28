@@ -1,0 +1,12 @@
+{{yield}}
+<div>
+
+  {{#if editable}}
+      {{input type="text"  value=editing}}
+      <button {{action "cancelEdit"}}>Cancel</button>
+  {{else}}
+    <span>{{row.name}}</span>
+  {{/if}}
+  <button {{action "btnClick"}}>{{editBtnText}}</button>{{row.isDeleted}}
+
+</div>
