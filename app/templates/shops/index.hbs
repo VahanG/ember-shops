@@ -1,10 +1,14 @@
 {{outlet}}
 shops
+<div>
   <ul class="results">
     {{#each model as |shop|}}
         {{#unless shop.isDeleted}}
-            {{shop-row row=shop}} <button {{action 'remove' shop}}>Remove</button>
+          <li style="display:flex">
+            {{shop-row row=shop}} <button style="background-color:red;margin-left:10px;" {{action 'remove' shop}}>Remove</button>
+          </li>
         {{/unless}}
     {{/each}}
   </ul>
   <button {{action "add"}}>add</button>
+</div>

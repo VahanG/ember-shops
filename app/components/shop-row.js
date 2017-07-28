@@ -9,6 +9,7 @@ export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     this.editable = false;
+
     console.log(this.row.toJSON());
   //  Ember.keys(model.toJSON())
 
@@ -16,6 +17,10 @@ export default Ember.Component.extend({
     this.editing = this.get('row.name');
     this.editBtnText ="EDIT";
     //this.errors = [];
+
+    if(this.row.edt){
+      this.makeEditable();
+    }
   },
 
 

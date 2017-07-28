@@ -10,6 +10,9 @@ export default Ember.Component.extend({
       console.log(this.row);
       this.editing = Object.assign({},this.row);
       this.editBtnText ="EDIT";
+      if(this.row.edt){
+        this.makeEditable();
+      }
       //this.errors = [];
     },
 

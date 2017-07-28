@@ -1,9 +1,12 @@
 <h2>Products</h2>
+<div>
   <ul class="results">
     {{#each model.products as |product index|}}
+
         {{#unless product.isDeleted}}
-            {{product-row row=product}} <button {{action 'remove' index}}>Remove</button>
+        <li style="display:flex">    {{product-row row=product}} <button style="background-color:red;margin-left:10px;" {{action 'remove' index}}>Remove</button></li>
         {{/unless}}
     {{/each}}
   </ul>
-  <button {{action "add"}}>add</button>{{aa.p}} <div style="display:none">{{aa}}</div>
+  <button {{action "add"}}>add</button>{{aa.p}} <div> Price- {{total.p}}</div>
+</div>
